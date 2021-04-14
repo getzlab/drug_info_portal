@@ -1,0 +1,317 @@
+Abemaciclib
+Abiraterone Acetate
+Paclitaxel Albumin-stabilized Nanoparticle Formulation
+Acalabrutinib
+Tocilizumab
+Brentuximab Vedotin
+Ado-Trastuzumab Emtansine
+Doxorubicin
+Afatinib Dimaleate
+Everolimus
+Netupitant and Palonosetron Hydrochloride
+Imiquimod
+Aldesleukin
+Alectinib
+Alemtuzumab
+Pemetrexed Disodium
+Copanlisib Hydrochloride
+Melphalan Hydrochloride
+Melphalan
+Palonosetron Hydrochloride
+Alpelisib
+Brigatinib
+Aminolevulinic Acid Hydrochloride
+Amifostine
+Anastrozole
+Apalutamide
+Aprepitant
+Darbepoetin Alfa
+Pamidronate Disodium
+Exemestane
+Nelarabine
+Arsenic Trioxide
+Ofatumumab
+Asparaginase Erwinia chrysanthemi
+Calaspargase Pegol-mknl
+Atezolizumab
+Avapritinib
+Bevacizumab
+Avelumab
+Axicabtagene Ciloleucel
+Axitinib
+Azacitidine
+Iobenguane I 131
+Belinostat
+Bendamustine Hydrochloride
+Inotuzumab Ozogamicin
+Bexarotene
+Bicalutamide
+Carmustine
+Binimetinib
+Bleomycin Sulfate
+Blinatumomab
+Bortezomib
+Bosutinib
+Encorafenib
+Zanubrutinib
+Busulfan
+Cabazitaxel
+Cabozantinib-S-Malate
+Irinotecan Hydrochloride
+Capecitabine
+Capmatinib Hydrochloride
+Carboplatin
+Carfilzomib
+Carmustine Implant
+Cemiplimab-rwlc
+Ceritinib
+Daunorubicin Hydrochloride
+Recombinant Human Papillomavirus (HPV) Bivalent Vaccine
+Cetuximab
+Chlorambucil
+Cisplatin
+Cladribine
+Clofarabine
+Cobimetinib
+Duvelisib
+Dactinomycin
+Crizotinib
+Cyclophosphamide
+Ramucirumab
+Cytarabine
+Dabrafenib Mesylate
+Dacarbazine
+Decitabine
+Dacomitinib
+Daratumumab
+Daratumumab and Hyaluronidase-fihj
+Darolutamide
+Dasatinib
+Daunorubicin Hydrochloride and Cytarabine Liposome
+Defibrotide Sodium
+Degarelix
+Denileukin Diftitox
+Denosumab
+Dexamethasone
+Dexrazoxane Hydrochloride
+Dinutuximab
+Docetaxel
+Doxorubicin Hydrochloride Liposome
+Durvalumab
+Leuprolide Acetate
+Rasburicase
+Epirubicin
+Elotuzumab
+Oxaliplatin
+Eltrombopag Olamine
+Tagraxofusp-erzs
+Emapalumab-lzsg
+Enfortumab Vedotin-ejfv
+Fam-Trastuzumab Deruxtecan-nxki
+Entrectinib
+Enzalutamide
+Epoetin Alfa
+Eribulin Mesylate
+Vismodegib
+Erlotinib Hydrochloride
+Etoposide Phosphate
+Etoposide
+Raloxifene Hydrochloride
+Fluorouracil
+Toremifene
+Panobinostat
+Fulvestrant
+Fedratinib Hydrochloride
+Letrozole
+Filgrastim
+Fludarabine Phosphate
+Flutamide
+Pralatrexate
+Fostamatinib Disodium
+Recombinant Human Papillomavirus (HPV) Quadrivalent Vaccine
+Recombinant Human Papillomavirus (HPV) Nonavalent Vaccine
+Obinutuzumab
+Gefitinib
+Gemcitabine Hydrochloride
+Gemtuzumab Ozogamicin
+Gilteritinib Fumarate
+Imatinib Mesylate
+Glucarpidase
+Goserelin Acetate
+Granisetron
+Granisetron Hydrochloride
+Propranolol Hydrochloride
+Trastuzumab and Hyaluronidase-oysk
+Trastuzumab
+Topotecan Hydrochloride
+Hydroxyurea
+Palbociclib
+Ibritumomab Tiuxetan
+Ibrutinib
+Ponatinib Hydrochloride
+Idarubicin Hydrochloride
+Idelalisib
+Ifosfamide
+Talimogene Laherparepvec
+Recombinant Interferon Alfa-2b
+Ipilimumab
+Irinotecan Hydrochloride Liposome
+Isatuximab-irfc
+Romidepsin
+Ivosidenib
+Ixabepilone
+Ixazomib Citrate
+Ruxolitinib Phosphate
+Mitomycin
+Palifermin
+Pembrolizumab
+Ribociclib
+Selumetinib Sulfate
+Tisagenlecleucel
+Lanreotide Acetate
+Lapatinib Ditosylate
+Larotrectinib Sulfate
+Lenalidomide
+Lenvatinib Mesylate
+Leucovorin Calcium
+Lomustine
+Trifluridine and Tipiracil Hydrochloride
+Lorlatinib
+Moxetumomab Pasudotox-tdfk
+Lurbinectedin
+Luspatercept-aamt
+Lutetium Lu 177-Dotatate
+Olaparib
+Vincristine Sulfate Liposome
+Procarbazine Hydrochloride
+Mechlorethamine Hydrochloride
+Megestrol Acetate
+Trametinib
+Mercaptopurine
+Mesna
+Methotrexate
+Methylnaltrexone Bromide
+Midostaurin
+Mitoxantrone Hydrochloride
+Plerixafor
+Necitumumab
+Neratinib Maleate
+Pegfilgrastim
+Sorafenib Tosylate
+Nilutamide
+Nilotinib
+Niraparib Tosylate Monohydrate
+Nivolumab
+Romiplostim
+Sonidegib
+Omacetaxine Mepesuccinate
+Pegaspargase
+Ondansetron Hydrochloride
+Osimertinib Mesylate
+Paclitaxel
+Panitumumab
+Pazopanib Hydrochloride
+Peginterferon Alfa-2b
+Pemigatinib
+Pertuzumab
+Pexidartinib Hydrochloride
+Polatuzumab Vedotin-piiq
+Pomalidomide
+Prednisone
+Sipuleucel-T
+Ripretinib
+Radium 223 Dichloride
+Ravulizumab-cwvz
+Regorafenib
+Selpercatinib
+Rituximab
+Rituximab and Hyaluronidase Human
+Rolapitant Hydrochloride
+Rucaparib Camsylate
+Sacituzumab Govitecan-hziy
+Talc
+Selinexor
+Siltuximab
+Sunitinib Malate
+Thioguanine
+Tamoxifen Citrate
+Tazemetostat Hydrobromide
+Temozolomide
+Temsirolimus
+Thalidomide
+Thiotepa
+Trabectedin
+Tucatinib
+Uridine Triacetate
+Valrubicin
+Vandetanib
+Vemurafenib
+Venetoclax
+Vinblastine Sulfate
+Vincristine Sulfate
+Vinorelbine Tartrate
+Vorinostat
+Ziv-Aflibercept
+Zoledronic Acid
+Sagopilone
+GDC-0941
+Vosaroxin
+sulfasalazine
+Prednisolone
+Navitoclax
+Pyrimethamine
+Solu-Medrol
+Methylprednisolone
+Obatoclax
+Folinic Acid
+Golvatinib
+Nazartinib
+Entinostat
+Losatuxizumab Vedotin
+AFP-C332
+ALX-148
+Brilanestrant
+CLR-457
+Cobicistat
+Dalotuzumab
+Debio-1347
+Dinaciclib
+DKN-01
+Dostarlimab
+Emactuzumab
+Floxuridine
+Futibatinib
+Inavolisib
+H3B-6545
+Halotestin
+Infigratinib
+Roferon-A
+Interleukin 2
+Ladiratuzumab vedotin
+Lamivudine
+LFA-102
+Lisocabtagene maraleucel
+LSZ102
+LY-3214996
+MAGE TCR
+MK-2206
+Olutasidenib
+PLX-8394
+Ridaforolimus
+IMMU-132
+Sapanisertib
+SAR-439459
+Serabelisib
+Seviteronel
+Sotrastaurin acetate
+SRN-927
+Subasumstat
+Mevociclib
+Taselisib
+Tislelizumab
+Ulixertinib
+Veliparib
+WDVAX
+XMT-1522
+buthionine sulfoximine
+CAR-T
