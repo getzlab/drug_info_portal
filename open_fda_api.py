@@ -55,6 +55,17 @@ def __prep_entry(entry: str):
 
 
 def get_fda_info(drugName: str):
+    """Get info from openFDA
+        https://api.fda.gov/drug/ndc.json
+    Args:
+        drugName (str): drug name
+
+    Raises:
+        RequestFDAError: if cannot get info
+
+    Returns:
+        dict: info
+    """
     params = {"search": "", "limit": 1}
     entry = __prep_entry(drugName)
     searchStr = '(generic_name.exact:"{0}"+brand_name.exact:"{0}")'.format(entry)
@@ -64,6 +75,7 @@ def get_fda_info(drugName: str):
     if res.status_code != 200:
         raise RequestFDAError(res, 200)
     data = res.json()
+    # check if search found any results
     if "meta" not in data:
         return
     if data["meta"]["results"]["total"] < 1:

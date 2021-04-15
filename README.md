@@ -1,26 +1,26 @@
-# Project Title
+# Drugs detail info
 Scan openFDA and SEER.cancer.gov for drug details.  
 FDA output is  the __exact__ match  
 SEER output is the most __relevent__ match
 
-## Instalation 
+## Installation 
 ### Prerequisites
-+ authoritation token from https://api.seer.cancer.gov/new_account
-+ authoritation token from https://open.fda.gov/apis/authentication
++ authorization token from https://api.seer.cancer.gov/new_account
++ authorization token from https://open.fda.gov/apis/authentication
 save tokens   
 `export SEER_API_KEY="{your_seer_token}"`  
 `export FDA_API_KEY="{your_openfda_token}"`
 
-### Instalaiton
+### Installation
 clone repository   
 `git clone https://github.com/getzlab/drug_info_portal.git`  
 change directory  
 `cd drug_info_portal`  
-set virual enviroment  
+set virtual environment  
 `python3 -m venv .venv`  
-activate enviroment  
+activate environment  
 `source .venv/bin/activate`  
-load requared packages   
+load required packages   
 `pip install -r requirements.txt`
 
 ## Usage
@@ -32,7 +32,6 @@ Two tab-separated files with the detailed info about drug
 + `-o` `--output` Prefix for the output files
 ### Example
 `python drug_info.py -i example.txt -o example`
-`
 
 ### TODO
 + add search based on active ingridient
