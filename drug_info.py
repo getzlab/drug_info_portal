@@ -63,10 +63,7 @@ def drug_info(args: list = None):
         try:
             info = get_fda_info(entry)
         except RequestFDAError:
-            info = None
-        if info is None:
-            print(f"open FDA: Cannot find {entry}", file=sys.stderr)
-            continue
+            info = {"entry": entry, "found_flag": "FALSE"}
         FDA_info.append(info)
 
     seer_info = []
@@ -77,11 +74,13 @@ def drug_info(args: list = None):
         except RequestSEERError:
             idx = None
         if idx is None:
+            seer_info.append({"entry": entry, "found_flag": "FALSE"})
             print(f"SEER Cancer.gov: Cannot find {entry}", file=sys.stderr)
             continue
         try:
             info = get_rx_info(idx, entry)
         except RequestSEERError:
+            seer_info.append({"entry": entry, "found_flag": "FALSE"})
             print(f"SEER Cancer.gov: Cannot find {entry}", file=sys.stderr)
             continue
         seer_info.append(info)

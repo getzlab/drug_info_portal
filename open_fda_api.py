@@ -83,6 +83,7 @@ def get_fda_info(drugName: str):
 
     outDict = {
         "entry": drugName,
+        "found_flag": "TRUE",
         "brand_name": "",
         "generic_name": "",
         "active_ingredients": "",

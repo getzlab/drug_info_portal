@@ -88,6 +88,7 @@ def get_rx_info(rxId, entry: str, vertion: str = "latest"):
     data = res.json()
     outDict = {
         "entry": entry,
+        "found_flag": "TRUE",
         "alternate_name": "",
         "abbreviation": "",
         "category": "",
@@ -119,6 +120,7 @@ def get_rx_info(rxId, entry: str, vertion: str = "latest"):
     if "subcategory" in data:
         outDict["subcategory"] = ", ".join(data["subcategory"])
     return outDict
+
 
 if __name__ == "__main__":
     pass

@@ -34,5 +34,5 @@ Two tab-separated files with the detailed info about drug
 `python drug_info.py -i example.txt -o example`
 
 ### TODO
-+ add search based on active ingridient
++ add active ingridient
 + remove suffiex from the drug names
