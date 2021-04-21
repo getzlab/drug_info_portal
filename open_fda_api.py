@@ -1,8 +1,8 @@
-import requests
-from itertools import islice
 import os
 from urllib.parse import urlencode, urljoin
+from dataclasses import dataclass, asdict
 
+import requests
 
 __SESSION_FDA = None
 __ROOT_FDA_URL = "https://api.fda.gov/drug/ndc.json"
@@ -32,6 +32,18 @@ class RequestFDAError(Error):
         return errStr
 
 
+@dataclass(init=True, repr=True, eq=False, order=False, unsafe_hash=False, frozen=False)
+class FDAResults:
+    entry: str
+    found_flag: bool = False
+    brand_name: str = ""
+    generic_name: str = ""
+    active_ingredients: str = ""
+    labeler_name: str = ""
+    pharm_class: str = ""
+    route: str = ""
+
+
 def __set_session():
     global __SESSION_FDA
     if __SESSION_FDA is None:
@@ -54,7 +66,7 @@ def __prep_entry(entry: str):
     return e.translate({ord(" "): "+"})
 
 
-def get_fda_info(drugName: str):
+def get_fda_response(drugName: str):
     """Get info from openFDA
         https://api.fda.gov/drug/ndc.json
     Args:
@@ -74,39 +86,42 @@ def get_fda_info(drugName: str):
     res = __get(methodCall="", params=paramsStr)
     if res.status_code != 200:
         raise RequestFDAError(res, 200)
+    return res
+
+
+def get_fda_info(entry: str):
+    dataFDA = FDAResults(entry)
+    try:
+        res = get_fda_response(entry)
+    except RequestFDAError:
+        res = None
+    if res is None:
+        return asdict(dataFDA)
+
     data = res.json()
     # check if search found any results
     if "meta" not in data:
-        return
+        return asdict(dataFDA)
     if data["meta"]["results"]["total"] < 1:
-        return
+        return asdict(dataFDA)
 
-    outDict = {
-        "entry": drugName,
-        "found_flag": "TRUE",
-        "brand_name": "",
-        "generic_name": "",
-        "active_ingredients": "",
-        "labeler_name": "",
-        "pharm_class": "",
-        "route": "",
-    }
     results = data["results"][0]
+    dataFDA.found_flag = True
     if "brand_name" in results:
-        outDict["brand_name"] = results["brand_name"].strip()
+        dataFDA.brand_name = results["brand_name"].strip()
     if "generic_name" in results:
-        outDict["generic_name"] = results["generic_name"].strip()
+        dataFDA.generic_name = results["generic_name"].strip()
     if "active_ingredients" in results:
-        outDict["active_ingredients"] = ",".join(
+        dataFDA.active_ingredients = ",".join(
             x["name"].strip() for x in results["active_ingredients"]
         )
     if "labeler_name" in results:
-        outDict["labeler_name"] = results["labeler_name"].strip()
+        dataFDA.labeler_name = results["labeler_name"].strip()
     if "pharm_class" in results:
-        outDict["pharm_class"] = ",".join(x.strip() for x in results["pharm_class"])
+        dataFDA.pharm_class = ",".join(x.strip() for x in results["pharm_class"])
     if "route" in results:
-        outDict["route"] = ",".join(x.strip() for x in results["route"])
-    return outDict
+        dataFDA.route = ",".join(x.strip() for x in results["route"])
+    return asdict(dataFDA)
 
 
 if __name__ == "__main__":

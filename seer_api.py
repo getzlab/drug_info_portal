@@ -1,7 +1,8 @@
-import requests
 from operator import itemgetter
 import os
 from urllib.parse import urljoin
+from dataclasses import dataclass, asdict
+import requests
 
 
 __SESSION_SEER = None
@@ -30,6 +31,23 @@ class RequestSEERError(Error):
             self.response.status_code, self.expectedCode, self.response.url
         )
         return errStr
+
+
+@dataclass(init=True, repr=True, eq=False, order=False, unsafe_hash=False, frozen=False)
+class SeerResult:
+    entry: str
+    found_flag: bool = False
+    alternate_name: str = ""
+    abbreviation: str = ""
+    category: str = ""
+    drugs: str = ""
+    name: str = ""
+    histology: str = ""
+    note: str = ""
+    primary_site: str = ""
+    radiation: str = ""
+    subcategory: str = ""
+    remarks: str = ""
 
 
 def __set_session():
@@ -76,50 +94,54 @@ def get_rx_id(entry: str, vertion: str = "latest"):
         return matchname[0]["id"]
     # relevence score
     results = sorted(data["results"], key=itemgetter("score"), reverse=True)
-    id = results[0]["id"]
-    return id
+    return results[0]["id"]
 
 
-def get_rx_info(rxId, entry: str, vertion: str = "latest"):
+def get_rx_response(rxId, vertion: str = "latest"):
+    if rxId is None:
+        return
     methodCall = "rest/rx/{0}/id/{1}".format(vertion, rxId)
     res = __get(methodCall)
     if res.status_code != 200:
         raise RequestSEERError(res, 200)
-    data = res.json()
-    outDict = {
-        "entry": entry,
-        "found_flag": "TRUE",
-        "alternate_name": "",
-        "abbreviation": "",
-        "category": "",
-        "drugs": "",
-        "name": "",
-        "histology": "",
-        "note": "",
-        "primary_site": "",
-        "radiation": "",
-        "subcategory": "",
-        "remarks": "",
-    }
+    return res
+
+
+def get_rx_info(entry: str, vertion: str = "latest"):
+    dataSEER = SeerResult(entry)
+    try:
+        idx = get_rx_id(entry, vertion=vertion)
+    except RequestSEERError:
+        return asdict(dataSEER)
+    try:
+        response = get_rx_response(idx, vertion=vertion)
+    except RequestSEERError:
+        return asdict(dataSEER)
+
+    if response is None:
+        return asdict(dataSEER)
+
+    data = response.json()
+    dataSEER.found_flag = True
     if "alternate_name" in data:
-        outDict["alternate_name"] = ", ".join(data["alternate_name"])
+        dataSEER.alternate_name = ", ".join(data["alternate_name"])
     if "abbreviation" in data:
-        outDict["abbreviation"] = ", ".join(data["abbreviation"])
+        dataSEER.abbreviation = ", ".join(data["abbreviation"])
     if "category" in data:
-        outDict["category"] = ", ".join(data["category"])
+        dataSEER.category = ", ".join(data["category"])
     if "drugs" in data:
-        outDict["drugs"] = ", ".join(data["drugs"])
+        dataSEER.drugs = ", ".join(data["drugs"])
     if "name" in data:
-        outDict["name"] = data["name"]
+        dataSEER.name = data["name"]
     if "primary_site" in data:
-        outDict["primary_site"] = ", ".join(data["primary_site"])
+        dataSEER.primary_site = ", ".join(data["primary_site"])
     if "radiation" in data:
-        outDict["radiation"] = data["radiation"]
+        dataSEER.radiation = data["radiation"]
     if "remarks" in data:
-        outDict["remarks"] = " ".join(data["remarks"].split("\n"))
+        dataSEER.remarks = " ".join(data["remarks"].split("\n"))
     if "subcategory" in data:
-        outDict["subcategory"] = ", ".join(data["subcategory"])
-    return outDict
+        dataSEER.subcategory = ", ".join(data["subcategory"])
+    return asdict(dataSEER)
 
 
 if __name__ == "__main__":

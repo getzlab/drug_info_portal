@@ -60,29 +60,17 @@ def drug_info(args: list = None):
     FDA_info = []
     for entry in drugList:
         print(f"FDA searching for {entry}:")
-        try:
-            info = get_fda_info(entry)
-        except RequestFDAError:
-            info = {"entry": entry, "found_flag": "FALSE"}
+        info = get_fda_info(entry)
+        if not info["found_flag"]:
+            print(f"OPEN FDA: Cannot find {entry}", file=sys.stderr)
         FDA_info.append(info)
 
     seer_info = []
     for entry in drugList:
         print(f"SEER searching for {entry}:")
-        try:
-            idx = get_rx_id(entry)
-        except RequestSEERError:
-            idx = None
-        if idx is None:
-            seer_info.append({"entry": entry, "found_flag": "FALSE"})
+        info = get_rx_info(entry)
+        if not info["found_flag"]:
             print(f"SEER Cancer.gov: Cannot find {entry}", file=sys.stderr)
-            continue
-        try:
-            info = get_rx_info(idx, entry)
-        except RequestSEERError:
-            seer_info.append({"entry": entry, "found_flag": "FALSE"})
-            print(f"SEER Cancer.gov: Cannot find {entry}", file=sys.stderr)
-            continue
         seer_info.append(info)
 
     out_file_fda = argv.out_name + "_fda.tsv"
@@ -92,5 +80,5 @@ def drug_info(args: list = None):
 
 
 if __name__ == "__main__":
-    args = "-i /Users/sbelkin/Broad/drug_info/example.txt -o /Users/sbelkin/Broad/drug_info/example"
+    args = "-i /Users/sbelkin/Broad/drug_info_portal/example.txt -o /Users/sbelkin/Broad/drug_info_portal/example"
     drug_info()
