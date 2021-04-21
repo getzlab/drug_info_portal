@@ -1,7 +1,7 @@
 import argparse
 import sys, csv
-from open_fda_api import get_fda_info, RequestFDAError
-from seer_api import get_rx_id, get_rx_info, RequestSEERError
+from open_fda_api import get_fda_info
+from seer_api import get_rx_info
 
 
 def parse_args(argv: list) -> argparse.Namespace:
